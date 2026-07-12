@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Flutter "F" mark - pure vector (no embedded raster) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 166 202" aria-label="Flutter">
+  <title>Flutter</title>
+  <!-- Top-right wing: parallelogram tilted right -->
+  <polygon points="157.7,65.1 116.5,38.7 91.3,53.6 132.6,80" fill="#47C5FB"/>
+  <!-- Middle wing: the main stem of the F (full skew) -->
+  <polygon points="157.7,102.4 91.3,65.1 66,80 132.4,117.3" fill="#47C5FB"/>
+  <!-- Center rhombus (contrast fill) -->
+  <polygon points="116.5,76.3 132.4,65.1 157.7,80 141.7,91.2" fill="#00569E"/>
+  <!-- Inner rhombus (light fill, balances center) -->
+  <polygon points="132.4,102.4 107.2,117.3 82,102.4 107.2,87.6" fill="#47C5FB"/>
+  <!-- Bottom-right accent (dark fill) -->
+  <polygon points="157.7,139.7 132.4,155.3 107.2,139.7 132.4,124.2" fill="#00569E"/>
+</svg>
