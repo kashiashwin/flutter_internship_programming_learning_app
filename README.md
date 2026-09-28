@@ -252,3 +252,5 @@ This project is developed as part of an internship programme.
 - **Google Fonts** for the beautiful typography
 - All team members and project managers for their contributions
 - Internship coordinators for guidance and support
+#   i n o v i q - w e b s i t e  
+ 
