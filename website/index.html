@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INOVIQ — Programming Learning App | Official Project Platform</title>
+  <meta name="description"
+    content="INOVIQ is a fully offline, self-contained Flutter & SQLite programming companion app. Learn Python, Django, C++, Java, Flutter, Web Dev, Game Dev, and DevOps with structured lessons and live simulators." />
+  <meta name="keywords"
+    content="INOVIQ, Flutter, Dart, SQLite, Programming App, Learn to Code, Python, Django, DevOps, C++, Java, Internship" />
+
+  <!-- OpenGraph / Social Metadata -->
+  <meta property="og:title" content="INOVIQ — Learn to Code. Beautifully." />
+  <meta property="og:description"
+    content="Explore 8 comprehensive programming curricula, test code in live sandboxes, and inspect the SQLite offline architecture." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/company_logo.png" />
+  <meta name="theme-color" content="#00897b" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/icons/app_icon.png" />
+
+  <!-- Google Fonts: Aboreto, Poppins, Outfit, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Aboreto&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="ambient-orb ambient-orb-1"></div>
+    <div class="ambient-orb ambient-orb-2"></div>
+    <div class="ambient-orb ambient-orb-3"></div>
+  </div>
+
+  <!-- ==========================================================================
+       Header & Navigation
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand-logo-link" id="nav-brand-logo">
+        <img src="assets/images/company_logo.png" alt="InoViq Brand Logo" class="brand-logo-img" />
+        <div class="brand-titles">
+          <div class="brand-name">
+            <span class="brand-text">InoViq</span>
+            <span class="brand-badge">v9.11</span>
+          </div>
+          <span class="brand-subtitle">Learn to code. Beautifully.</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <ul class="nav-links" id="desktop-nav-links">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#simulator" class="nav-link">Simulator</a></li>
+        <li><a href="#courses" class="nav-link">Courses</a></li>
+        <li><a href="#playground" class="nav-link">Playground</a></li>
+        <li><a href="#architecture" class="nav-link">Architecture</a></li>
+        <li><a href="#quiz" class="nav-link">Quiz</a></li>
+        <li><a href="#team" class="nav-link">Team</a></li>
+      </ul>
+
+      <!-- Action Items & Theme Toggle -->
+      <div class="nav-actions">
+        <button id="theme-toggle-btn" class="theme-toggle-btn" title="Toggle Obsidian Dark / Crisp Teal Light"
+          aria-label="Toggle Theme">
+          <span id="theme-icon">☀️</span>
+        </button>
+        <button class="btn-primary open-auth-modal-btn" id="nav-cta-btn" title="Create or test a demo user account">
+          <span class="btn-text-full">Demo Account</span>
+          <span class="btn-text-short">Demo</span>
+        </button>
+        <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Toggle mobile menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Hero Section
+       ========================================================================== -->
+  <main>
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <!-- Hero Text & CTA -->
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span class="hero-pill-pulse"></span>
+            <span>Internship Programme Showcase · Flutter & SQLite</span>
+          </div>
+
+          <h1 class="hero-title">
+            Learn to Code.<br />
+            <span class="gradient-text">Beautifully.</span>
+          </h1>
+
+          <p class="hero-desc">
+            <strong>INOVIQ</strong> is a self-contained, fully offline programming learning companion built entirely
+            from scratch in <strong>Flutter</strong> and <strong>Dart</strong>. Packed with 8 structured curricula, 80
+            lessons, interactive syntax panels, live progress tracking, and zero cloud dependency.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#courses" class="btn-primary" id="hero-explore-btn">
+              <span>Explore 8 Courses</span>
+              <span>→</span>
+            </a>
+            <a href="#simulator" class="btn-secondary" id="hero-simulator-btn">
+              <span>Test App Simulator</span>
+            </a>
+            <a href="https://github.com/kashiashwin/flutter_internship_programming_learning_app" target="_blank"
+              rel="noopener noreferrer" class="btn-secondary" id="hero-github-btn">
+              <span>GitHub Repo ↗</span>
+            </a>
+          </div>
+
+          <div class="hero-badges-row">
+            <span class="tech-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M14.314 0L2.3 12 6 15.7 21.684 0h-7.37zM6.028 15.686L0 21.714 3.686 25.4l6.028-6.028-3.686-3.686zm4.886 4.886L14.6 24.257h7.4l-7.371-7.371-3.715 3.686z" />
+              </svg>
+              Flutter 3.x
+            </span>
+            <span class="tech-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0L1.605 6.002v11.996L12 24l10.395-6.002V6.002L12 0zm0 2.308l7.732 4.464v8.928L12 20.164l-7.732-4.464V6.772L12 2.308z" />
+              </svg>
+              Dart 2.17+
+            </span>
+            <span class="tech-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.48 2 2 4.02 2 6.5s4.48 4.5 10 4.5 10-2.02 10-4.5S17.52 2 12 2zm0 6.5c-3.87 0-7-1.34-7-2.5s3.13-2.5 7-2.5 7 1.34 7 2.5-3.13 2.5-7 2.5zm10 2.5c0 1.25-1.57 2.37-4.06 3.06-.82-1.39-2.31-2.43-4.08-2.82 2.87-.25 5.14-.99 5.14-1.74v1.5z" />
+              </svg>
+              SQLite (sqflite)
+            </span>
+            <span class="tech-badge">
+              <span>🔒 100% Offline Storage</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Phone Mockup App Simulator -->
+        <div class="hero-mockup-wrapper" id="simulator">
+          <div class="mockup-controls-hint">
+            <span>📱 Interactive Virtual Device · Click buttons inside to navigate</span>
+          </div>
+
+          <!-- Realistic Titanium Smartphone Frame -->
+          <div class="phone-mockup-frame" id="phone-frame">
+            <!-- Dynamic Island / Speaker Pill -->
+            <div class="phone-island">
+              <div class="island-camera"></div>
+            </div>
+
+            <!-- Virtual Status Bar -->
+            <div class="phone-status-bar">
+              <span id="phone-clock">09:41</span>
+              <div class="phone-status-icons">
+                <span>📶</span>
+                <span>🔋 98%</span>
+              </div>
+            </div>
+
+            <!-- Virtual Screen Viewport -->
+            <div class="phone-screen-container">
+              <!-- Virtual Screen 1: Welcome -->
+              <div class="virtual-screen vscreen-welcome active" id="vscreen-welcome">
+                <div>
+                  <div class="v-welcome-pill">v1.0 · Internship II</div>
+                  <div class="v-welcome-logo-circle">
+                    <img src="assets/images/company_logo.png" alt="InoViq logo in simulator" />
+                  </div>
+                  <h2 class="v-welcome-title">InoViq</h2>
+                  <p class="v-welcome-subtitle">Master programming languages.<br />Build real projects.</p>
+                  <div class="v-welcome-features">
+                    <span>⚡ 8 Languages</span>
+                    <span>•</span>
+                    <span>💾 SQLite Local</span>
+                    <span>•</span>
+                    <span>🎯 80 Lessons</span>
+                  </div>
+                </div>
+
+                <div class="v-welcome-btn-group">
+                  <button class="v-btn-start" id="phone-btn-get-started">
+                    🚀 Get Started
+                  </button>
+                  <button class="v-btn-outline" id="phone-btn-have-account">
+                    I already have an account
+                  </button>
+                </div>
+              </div>
+
+              <!-- Virtual Screen 2: Home Catalog -->
+              <div class="virtual-screen vscreen-home" id="vscreen-home">
+                <div class="v-home-header">
+                  <div class="v-home-topbar">
+                    <span class="v-home-title">InoViq</span>
+                    <span style="font-size: 1.1rem; cursor: pointer;" onclick="switchPhoneScreen('profile')">👤</span>
+                  </div>
+                  <div class="v-home-search-bar">
+                    <span>🔍</span>
+                    <span>Search courses...</span>
+                  </div>
+                </div>
+                <div class="v-home-greeting">Good evening, Learner! 👋</div>
+                <div class="v-home-section-title">Programming Courses</div>
+                <div class="v-home-grid" id="phone-courses-container">
+                  <!-- Injected via app.js -->
+                </div>
+              </div>
+
+              <!-- Virtual Screen 3: Course Detail -->
+              <div class="virtual-screen vscreen-detail" id="vscreen-detail">
+                <div class="v-detail-hero" id="phone-detail-hero">
+                  <div class="v-detail-back" id="phone-detail-back">← Back to Courses</div>
+                  <div class="v-detail-title" id="phone-detail-title">Python</div>
+                  <div class="v-detail-progress-box">
+                    <span id="phone-detail-progress-val">10% Complete</span>
+                    <div
+                      style="width: 70px; height: 5px; background: rgba(255,255,255,0.3); border-radius: 3px; overflow:hidden;">
+                      <div id="phone-detail-progress-fill" style="width: 10%; height: 100%; background: #ffffff;"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="v-detail-content" id="phone-detail-content">
+                  <!-- Injected via app.js -->
+                </div>
+              </div>
+
+              <!-- Virtual Screen 4: Profile & Settings -->
+              <div class="virtual-screen vscreen-profile" id="vscreen-profile">
+                <div class="v-profile-avatar-box">
+                  <div class="v-avatar-img">AT</div>
+                  <h3 id="v-phone-username" style="font-size: 1.05rem; font-weight: 700;">Ashwin T S</h3>
+                  <p id="v-phone-email" style="font-size: 0.72rem; color: #64748b;">ashwin@inoviq.com</p>
+                </div>
+                <div class="v-profile-info-card">
+                  <div class="v-info-row">
+                    <span style="color:#64748b;">User ID:</span>
+                    <strong>#10492</strong>
+                  </div>
+                  <div class="v-info-row">
+                    <span style="color:#64748b;">Gender:</span>
+                    <strong id="v-phone-gender">Male</strong>
+                  </div>
+                  <div class="v-info-row">
+                    <span style="color:#64748b;">Storage:</span>
+                    <strong>SQLite (sqflite)</strong>
+                  </div>
+                  <div class="v-info-row">
+                    <span style="color:#64748b;">Role:</span>
+                    <strong style="color:#00897b;">Intern Team Member</strong>
+                  </div>
+                </div>
+                <div style="margin-top: 1rem; text-align: center;">
+                  <button class="v-btn-start" style="width: 100%;" onclick="switchPhoneScreen('home')">
+                    ← Return to Courses
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Virtual Phone Bottom Navigation Bar -->
+            <div class="phone-bottom-nav">
+              <div class="phone-nav-tab active" data-screen="welcome">
+                <span>✨</span>
+                <span>Welcome</span>
+              </div>
+              <div class="phone-nav-tab" data-screen="home">
+                <span>📚</span>
+                <span>Courses</span>
+              </div>
+              <div class="phone-nav-tab" data-screen="profile">
+                <span>👤</span>
+                <span>Profile</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Screen Selector Pills under Phone -->
+          <div class="mockup-screen-selector">
+            <button class="screen-pill-btn active" data-screen="welcome">1. Splash</button>
+            <button class="screen-pill-btn" data-screen="home">2. Catalog</button>
+            <button class="screen-pill-btn" data-screen="detail">3. Lessons</button>
+            <button class="screen-pill-btn" data-screen="profile">4. Profile</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Key Metrics & Highlights
+         ========================================================================== -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-card-wrap">
+          <div class="stat-item">
+            <span class="stat-number">8</span>
+            <span class="stat-label">Core Curricular</span>
+            <span class="stat-sub">From Python & Flutter to DevOps</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">80</span>
+            <span class="stat-label">Structured Lessons</span>
+            <span class="stat-sub">Code blocks, tips & progress checks</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Offline First</span>
+            <span class="stat-sub">SQLite backend.db on single device</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Server Dependencies</span>
+            <span class="stat-sub">Privacy guaranteed, zero latency</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Course Catalogue Section
+         ========================================================================== -->
+    <section class="section-wrapper" id="courses">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Interactive Catalog</span>
+          <h2 class="section-title">8 Structured Learning Paths</h2>
+          <p class="section-desc">
+            Explore 10 curated modules per course with in-depth descriptions, copyable code snippets, sticky TOC
+            navigation, and local completion tracking.
+          </p>
+        </div>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="catalog-toolbar">
+          <div class="filter-chips">
+            <button class="filter-chip active" data-category="all">All (8)</button>
+            <button class="filter-chip" data-category="systems">Systems & Core</button>
+            <button class="filter-chip" data-category="backend">Backend & APIs</button>
+            <button class="filter-chip" data-category="mobile">Mobile (Flutter)</button>
+            <button class="filter-chip" data-category="web">Web Dev</button>
+            <button class="filter-chip" data-category="cloud">DevOps & Cloud</button>
+            <button class="filter-chip" data-category="game">Game Dev</button>
+          </div>
+
+          <div class="search-box-wrap">
+            <span>🔍</span>
+            <input type="text" id="course-search-input" placeholder="Search courses or lessons..."
+              aria-label="Search courses" />
+          </div>
+        </div>
+
+        <!-- Courses Dynamic Grid -->
+        <div class="courses-grid" id="courses-grid">
+          <!-- Injected via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Interactive Live Code Playground
+         ========================================================================== -->
+    <section class="section-wrapper playground-section" id="playground">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Hands-on Sandbox</span>
+          <h2 class="section-title">Live Code Runner & Playground</h2>
+          <p class="section-desc">
+            Test and run code snippets directly from the INOVIQ lessons. Switch languages, edit variables, and execute
+            with instant output.
+          </p>
+        </div>
+
+        <div class="playground-container">
+          <!-- Left: Code Editor Pane -->
+          <div class="playground-editor-pane">
+            <div class="playground-lang-tabs">
+              <button class="lang-tab-btn active" data-lang="python">Python</button>
+              <button class="lang-tab-btn" data-lang="javascript">JavaScript</button>
+              <button class="lang-tab-btn" data-lang="dart">Dart / Flutter</button>
+              <button class="lang-tab-btn" data-lang="cpp">C++</button>
+              <button class="lang-tab-btn" data-lang="java">Java</button>
+            </div>
+
+            <div class="code-editor-wrapper">
+              <div class="editor-toolbar">
+                <span id="playground-editor-lang">PYTHON 3.x</span>
+                <div class="code-actions-group">
+                  <button class="btn-code-action" id="playground-copy-btn">Copy</button>
+                  <button class="btn-code-action" id="playground-reset-btn">Reset</button>
+                </div>
+              </div>
+              <textarea class="code-textarea" id="playground-code-editor" spellcheck="false"
+                aria-label="Code editor"></textarea>
+            </div>
+
+            <div class="playground-actions-bar">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">
+                ⚡ Client-side sandboxed execution
+              </span>
+              <button class="btn-primary" id="playground-run-btn">
+                <span>▶ Run Code</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Terminal Output Console -->
+          <div class="playground-terminal-pane">
+            <div class="terminal-box">
+              <div class="terminal-header">
+                <span>OUTPUT TERMINAL / STDOUT</span>
+                <span>Exec Time: <strong id="terminal-exec-time" style="color:var(--teal-accent)">0 ms</strong></span>
+              </div>
+              <div class="terminal-stdout" id="terminal-stdout">
+                <span class="system-msg">Press "Run Code" to execute the snippet in the sandbox...</span>
+              </div>
+            </div>
+
+            <div style="font-size: 0.82rem; color: var(--text-muted); display:flex; justify-content:space-between;">
+              <span>Tip: You can edit the text area on the left directly.</span>
+              <span style="color: var(--teal-accent);">Status: Sandbox Ready</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         App Architecture & SQLite Database Inspector
+         ========================================================================== -->
+    <section class="section-wrapper" id="architecture">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Engineering Deep-Dive</span>
+          <h2 class="section-title">Offline SQLite Architecture</h2>
+          <p class="section-desc">
+            How INOVIQ delivers an end-to-end user journey — from splash screen to account management — running locally
+            with zero server reliance.
+          </p>
+        </div>
+
+        <div class="arch-grid">
+          <!-- SQLite Schema & Live Query Simulator -->
+          <div class="db-schema-card">
+            <div class="table-schema-header">
+              <div>
+                <h3 style="font-size: 1.25rem;">SQLite Schema Inspector</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Stored locally in <code>backend.db</code> via
+                  sqflite</p>
+              </div>
+              <span class="brand-badge">2 Tables</span>
+            </div>
+
+            <!-- Users Table Schema -->
+            <div>
+              <strong style="font-size: 0.88rem; color: var(--teal-accent);">Table: `users`</strong>
+              <table class="schema-table-view">
+                <thead>
+                  <tr>
+                    <th>Column</th>
+                    <th>Type</th>
+                    <th>Key / Constraint</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>id</code></td>
+                    <td>INTEGER</td>
+                    <td class="col-pk">PRIMARY KEY AUTOINCREMENT</td>
+                  </tr>
+                  <tr>
+                    <td><code>username</code></td>
+                    <td>TEXT</td>
+                    <td>NOT NULL</td>
+                  </tr>
+                  <tr>
+                    <td><code>email</code></td>
+                    <td>TEXT</td>
+                    <td>UNIQUE, VALIDATED</td>
+                  </tr>
+                  <tr>
+                    <td><code>gender</code></td>
+                    <td>TEXT</td>
+                    <td>'Male' | 'Female' | 'Other'</td>
+                  </tr>
+                  <tr>
+                    <td><code>password</code></td>
+                    <td>TEXT</td>
+                    <td>MIN 6 CHARS</td>
+                  </tr>
+                  <tr>
+                    <td><code>confirm_password</code></td>
+                    <td>TEXT</td>
+                    <td>VALIDATED MATCH</td>
+                  </tr>
+                  <tr>
+                    <td><code>profile_photo</code></td>
+                    <td>TEXT</td>
+                    <td>LOCAL DOCS PATH</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Login Table Schema -->
+            <div style="margin-top: 0.5rem;">
+              <strong style="font-size: 0.88rem; color: var(--teal-accent);">Table: `login`</strong>
+              <table class="schema-table-view">
+                <thead>
+                  <tr>
+                    <th>Column</th>
+                    <th>Type</th>
+                    <th>Key / Constraint</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>id</code></td>
+                    <td>INTEGER</td>
+                    <td class="col-pk">PRIMARY KEY AUTOINCREMENT</td>
+                  </tr>
+                  <tr>
+                    <td><code>email</code></td>
+                    <td>TEXT</td>
+                    <td>FOREIGN KEY REF</td>
+                  </tr>
+                  <tr>
+                    <td><code>password</code></td>
+                    <td>TEXT</td>
+                    <td>MATCHED AUTH HASH</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Interactive SQL Simulator -->
+            <div class="sql-query-console">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-size:0.75rem; color:var(--text-muted);">QUERY SIMULATOR:</span>
+                <code id="current-sql-display"
+                  style="font-size:0.75rem; color:var(--teal-accent);">SELECT * FROM users;</code>
+              </div>
+              <div class="query-preset-chips">
+                <button class="query-chip" data-sql="SELECT * FROM users;">SELECT * FROM users;</button>
+                <button class="query-chip" data-sql="SELECT email FROM login;">SELECT email FROM login;</button>
+                <button class="query-chip"
+                  data-sql="INSERT INTO users (username, email, gender) VALUES ('test_learner', 'learner@inoviq.com', 'Other');">INSERT
+                  new learner</button>
+                <button class="query-chip" data-sql="DELETE FROM users WHERE email='guest@inoviq.com';">DELETE
+                  (Safeguard)</button>
+              </div>
+              <div class="query-result-box" id="sql-query-result">
+                <!-- Injected via app.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Architectural Pillars List -->
+          <div class="arch-features-list">
+            <div class="arch-feat-item">
+              <div class="arch-feat-icon">⚡</div>
+              <div class="arch-feat-content">
+                <h4>In-Memory Session Manager</h4>
+                <p>The <code>SessionManager</code> static singleton class holds the authenticated user globally in
+                  memory across screens, preventing prop drilling while keeping screen transitions instantaneous.</p>
+              </div>
+            </div>
+
+            <div class="arch-feat-item">
+              <div class="arch-feat-icon">🛡️</div>
+              <div class="arch-feat-content">
+                <h4>Android 13+ Photo Picker Sandbox</h4>
+                <p>When picking profile photos, the image is automatically copied to the application's private documents
+                  directory via <code>path_provider</code>, preventing temporary URI permission revocation on modern
+                  Android versions.</p>
+              </div>
+            </div>
+
+            <div class="arch-feat-item">
+              <div class="arch-feat-icon">🔒</div>
+              <div class="arch-feat-content">
+                <h4>Safety Guard Account Deletion</h4>
+                <p>Permanent account deletion requires the user to explicitly type <code>"DELETE"</code> in uppercase.
+                  On verification, it synchronously drops rows from both <code>users</code> and <code>login</code>
+                  tables, purges session state, and redirects safely to the splash screen.</p>
+              </div>
+            </div>
+
+            <div class="arch-feat-item">
+              <div class="arch-feat-icon">🎨</div>
+              <div class="arch-feat-content">
+                <h4>Material-3 Edge-to-Edge Design System</h4>
+                <p>Crafted with Google Fonts (Aboreto display text, Poppins body text), soft card elevation, teal brand
+                  gradients, and sticky Table of Contents that dynamically adapts across orientations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Knowledge Check / Quiz Section
+         ========================================================================== -->
+    <section class="section-wrapper" id="quiz">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Interactive Quiz</span>
+          <h2 class="section-title">Test Your Programming Knowledge</h2>
+          <p class="section-desc">
+            Test what you've learned from INOVIQ's 8 courses with instant feedback and comprehensive explanations.
+          </p>
+        </div>
+
+        <div class="quiz-widget-card">
+          <div class="quiz-top-bar">
+            <span class="quiz-topic-tag" id="quiz-topic">Flutter Question</span>
+            <div style="display:flex; align-items:center; gap:0.8rem;">
+              <span style="font-size:0.82rem; color:var(--text-muted);" id="quiz-question-counter">Question 1 of
+                5</span>
+              <span class="quiz-score-pill">Score: <strong id="quiz-score-val"
+                  style="color:var(--teal-accent)">0/5</strong></span>
+            </div>
+          </div>
+
+          <h3 class="quiz-question-text" id="quiz-question">
+            Loading question...
+          </h3>
+
+          <div class="quiz-options-list" id="quiz-options">
+            <!-- Options dynamically rendered via app.js -->
+          </div>
+
+          <div class="quiz-explanation-box" id="quiz-explanation">
+            <!-- Explanation rendered via app.js -->
+          </div>
+
+          <div class="quiz-footer-bar">
+            <button class="btn-primary" id="quiz-next-btn" style="display: none;">
+              <span>Next Question →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Internship Team & Leadership Section
+         ========================================================================== -->
+    <section class="section-wrapper" id="team">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Project Credits</span>
+          <h2 class="section-title">The Internship Team & Leadership</h2>
+          <p class="section-desc">
+            Meet the talented engineers and project managers who built INOVIQ from scratch during the internship
+            programme.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Ashwin T S -->
+          <div class="team-card">
+            <div class="team-avatar-wrap">AT</div>
+            <h3 class="team-name">Ashwin T S</h3>
+            <span class="team-role">Team Member</span>
+            <p class="team-highlight">Frontend UI, Architecture & Integration</p>
+          </div>
+
+          <!-- Jessa Jaison -->
+          <div class="team-card">
+            <div class="team-avatar-wrap">JJ</div>
+            <h3 class="team-name">Jessa Jaison</h3>
+            <span class="team-role">Team Member</span>
+            <p class="team-highlight">Course Curricula & Content Development</p>
+          </div>
+
+          <!-- Anzil T Z -->
+          <div class="team-card">
+            <div class="team-avatar-wrap">AZ</div>
+            <h3 class="team-name">Anzil T Z</h3>
+            <span class="team-role">Team Member</span>
+            <p class="team-highlight">SQLite Database Layer & Storage</p>
+          </div>
+
+          <!-- Abishek P Prasad -->
+          <div class="team-card">
+            <div class="team-avatar-wrap">AP</div>
+            <h3 class="team-name">Abishek P Prasad</h3>
+            <span class="team-role">Team Member</span>
+            <p class="team-highlight">Authentication & Form Validation Logic</p>
+          </div>
+
+          <!-- Ahnas Mohammed P.M -->
+          <div class="team-card manager-card">
+            <div class="team-avatar-wrap" style="background: linear-gradient(135deg, #b45309 0%, #d97706 100%);">AM
+            </div>
+            <h3 class="team-name">Ahnas Mohammed P.M</h3>
+            <span class="team-role" style="color: #fbbf24;">Project Manager</span>
+            <p class="team-highlight">Sprint Planning & Technical Guidance</p>
+          </div>
+
+          <!-- Fathahiya Shirin P.M -->
+          <div class="team-card manager-card">
+            <div class="team-avatar-wrap" style="background: linear-gradient(135deg, #b45309 0%, #d97706 100%);">FS
+            </div>
+            <h3 class="team-name">Fathahiya Shirin P.M</h3>
+            <span class="team-role" style="color: #fbbf24;">Project Manager</span>
+            <p class="team-highlight">Quality Assurance & Project Delivery</p>
+          </div>
+
+          <!-- Mohammed Sharafas P.M -->
+          <div class="team-card manager-card">
+            <div class="team-avatar-wrap" style="background: linear-gradient(135deg, #b45309 0%, #d97706 100%);">MS
+            </div>
+            <h3 class="team-name">Mohammed Sharafas P.M</h3>
+            <span class="team-role" style="color: #fbbf24;">Project Manager</span>
+            <p class="team-highlight">Architecture Review & Mentorship</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <div style="display: flex; align-items: center; gap: 0.8rem;">
+            <img src="assets/images/company_logo.png" alt="InoViq logo"
+              style="width: 40px; height: 40px; border-radius: 50%;" />
+            <span class="brand-text" style="font-size: 1.4rem; font-weight: 800; color: #ffffff;">InoViq</span>
+          </div>
+          <p class="footer-desc">
+            A self-contained programming learning companion app built with Flutter and SQLite. Designed and developed as
+            part of an intensive internship programme.
+          </p>
+          <div style="display: flex; gap: 0.6rem; margin-top: 0.5rem;">
+            <span class="brand-badge">Version 9.11</span>
+            <span class="brand-badge" style="color: #10b981; border-color: rgba(16, 185, 129, 0.3);">MIT Licensed</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Courses</h5>
+          <ul class="footer-links">
+            <li><a href="#courses" class="footer-link" onclick="openCourseReaderModal('python')">Python</a></li>
+            <li><a href="#courses" class="footer-link" onclick="openCourseReaderModal('django')">Django</a></li>
+            <li><a href="#courses" class="footer-link" onclick="openCourseReaderModal('flutter')">Flutter & Dart</a>
+            </li>
+            <li><a href="#courses" class="footer-link" onclick="openCourseReaderModal('devops')">DevOps & Cloud</a></li>
+            <li><a href="#courses" class="footer-link" onclick="openCourseReaderModal('web')">Web Development</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Architecture</h5>
+          <ul class="footer-links">
+            <li><a href="#architecture" class="footer-link">SQLite Schema</a></li>
+            <li><a href="#architecture" class="footer-link">Session Manager</a></li>
+            <li><a href="#architecture" class="footer-link">Photo Sandbox</a></li>
+            <li><a href="#architecture" class="footer-link">Safety Safeguards</a></li>
+            <li><a href="#playground" class="footer-link">Live Playground</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Repository</h5>
+          <ul class="footer-links">
+            <li><a href="https://github.com/kashiashwin/flutter_internship_programming_learning_app" target="_blank"
+                rel="noopener noreferrer" class="footer-link">GitHub Repository ↗</a></li>
+            <li><a href="https://github.com/kashiashwin/flutter_internship_programming_learning_app/blob/main/README.md"
+                target="_blank" rel="noopener noreferrer" class="footer-link">Documentation ↗</a></li>
+            <li><a href="#team" class="footer-link">Internship Team</a></li>
+            <li><a href="#simulator" class="footer-link">Virtual Simulator</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 INOVIQ — Built with ♥ by the Internship Team</span>
+        <span>Flutter · Dart · SQLite · Google Fonts</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Course Reader Studio Modal
+       ========================================================================== -->
+  <div class="modal-overlay" id="course-reader-modal" role="dialog" aria-modal="true"
+    aria-labelledby="reader-course-title">
+    <div class="course-reader-modal">
+      <!-- Modal Header -->
+      <div class="reader-header">
+        <div class="reader-header-left">
+          <div class="reader-course-icon" id="reader-course-icon-wrap">
+            <img src="assets/icons/pyic.svg" alt="course icon" />
+          </div>
+          <div class="reader-title-wrap">
+            <h3 id="reader-course-title">Python</h3>
+            <p id="reader-course-sub">Versatile & Beginner Friendly</p>
+          </div>
+        </div>
+
+        <div class="reader-header-right">
+          <div class="reader-progress-chip">
+            <div class="reader-progress-bar">
+              <div class="reader-progress-fill" id="reader-progress-fill" style="width: 10%;"></div>
+            </div>
+            <span id="reader-progress-pct">10% Complete</span>
+          </div>
+          <button class="modal-close-btn" id="reader-close-btn" title="Close reader" aria-label="Close modal">✕</button>
+        </div>
+      </div>
+
+      <!-- Modal Body (Sticky TOC Sidebar + Main Content) -->
+      <div class="reader-body">
+        <!-- Sticky TOC -->
+        <aside class="reader-toc-pane">
+          <div class="toc-heading">Table of Contents (10 Lessons)</div>
+          <div id="reader-toc-list">
+            <!-- Injected via app.js -->
+          </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="reader-content-pane">
+          <div class="lesson-badge-row">
+            <span class="lesson-number-pill" id="reader-lesson-badge">Lesson 1 of 10</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">INOVIQ Curriculum</span>
+          </div>
+
+          <h2 class="lesson-title-main" id="reader-lesson-title">1. Introduction to Python</h2>
+          <p class="lesson-body-text" id="reader-lesson-body">Loading lesson text...</p>
+
+          <!-- Bullets -->
+          <ul class="lesson-bullets-list" id="reader-lesson-bullets">
+            <!-- Injected via app.js -->
+          </ul>
+
+          <!-- Code Snippet Box -->
+          <div class="code-snippet-box" id="reader-code-box">
+            <div class="code-header-bar">
+              <div class="code-dots">
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+                <span class="code-dot"></span>
+              </div>
+              <span id="reader-code-lang" style="font-family: var(--font-mono); font-size: 0.72rem;">PYTHON</span>
+              <div class="code-actions-group">
+                <button class="btn-code-action" onclick="copyReaderSnippet()">Copy Snippet</button>
+                <button class="btn-code-action" onclick="sendSnippetToPlayground()">Open in Playground ↗</button>
+              </div>
+            </div>
+            <pre class="code-pre"><code id="reader-code-pre">print("Hello, INOVIQ!")</code></pre>
+          </div>
+
+          <!-- Lesson Navigation and Complete Toggle -->
+          <div class="lesson-footer-actions">
+            <button class="btn-mark-complete" id="reader-btn-complete">
+              Mark Lesson as Complete
+            </button>
+            <div class="lesson-nav-buttons">
+              <button class="btn-secondary" id="reader-btn-prev">← Previous</button>
+              <button class="btn-primary" id="reader-btn-next">Next Lesson →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Simulated Auth Sign Up Modal
+       ========================================================================== -->
+  <div class="modal-overlay" id="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
+    <div class="auth-simulator-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+        <h3 id="auth-modal-title" style="font-size: 1.35rem; font-weight: 800;">Create INOVIQ Account</h3>
+        <button class="modal-close-btn" id="auth-modal-close" aria-label="Close sign-up modal">✕</button>
+      </div>
+
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+        Simulate the exact client-side registration & validation flow that saves to the local SQLite
+        <code>backend.db</code>.
+      </p>
+
+      <form id="simulated-signup-form">
+        <div class="auth-form-group">
+          <label for="auth-input-username">Username *</label>
+          <input type="text" id="auth-input-username" class="auth-input" placeholder="e.g. aswin_dev" required />
+        </div>
+
+        <div class="auth-form-group">
+          <label for="auth-input-email">Email Address *</label>
+          <input type="email" id="auth-input-email" class="auth-input" placeholder="user@inoviq.com" required />
+        </div>
+
+        <div class="auth-form-group">
+          <label>Gender *</label>
+          <div class="auth-gender-radios">
+            <label><input type="radio" name="gender" value="Male" checked /> Male</label>
+            <label><input type="radio" name="gender" value="Female" /> Female</label>
+            <label><input type="radio" name="gender" value="Other" /> Other</label>
+          </div>
+        </div>
+
+        <div class="auth-form-group">
+          <label for="auth-input-password">Password (min 6 chars) *</label>
+          <input type="password" id="auth-input-password" class="auth-input" placeholder="••••••••" required />
+        </div>
+
+        <div class="auth-form-group">
+          <label for="auth-input-confirm">Confirm Password *</label>
+          <input type="password" id="auth-input-confirm" class="auth-input" placeholder="••••••••" required />
+        </div>
+
+        <div class="auth-error-msg" id="auth-error-display">
+          Validation Error Placeholder
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 0.8rem;">
+          <span>Register into SQLite Database</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-notice" id="site-toast">
+    Notification message
+  </div>
+
+  <!-- Scripts -->
+  <script src="course-data.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
