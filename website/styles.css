@@ -527,6 +527,7 @@ button {
 .hero-title .gradient-text {
   background: linear-gradient(135deg, #2dd4bf 0%, #38bdf8 50%, #a855f7 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -1306,6 +1307,7 @@ button {
   line-height: 1.55;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
