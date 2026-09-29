@@ -3,7 +3,7 @@
 ![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?style=flat-square&logo=flutter)
 ![Dart](https://img.shields.io/badge/Dart-2.17+-0175C2?style=flat-square&logo=dart)
 ![SQLite](https://img.shields.io/badge/SQLite-sqflite-003B57?style=flat-square&logo=sqlite)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)            
 
 **Learn to code. Beautifully.**  
 INOVIQ is a fully offline, self-contained Flutter mobile application that serves as a programming-learning companion for beginners. Built entirely from scratch during an internship programme, it delivers a complete end-to-end user journey — from splash screen to account management — all running locally on a single Android device with no server or internet dependency.
@@ -252,5 +252,6 @@ This project is developed as part of an internship programme.
 - **Google Fonts** for the beautiful typography
 - All team members and project managers for their contributions
 - Internship coordinators for guidance and support
-#   i n o v i q - w e b s i t e  
+#   i n o v i q - w e b s i t e 
+ 
  
